@@ -9,84 +9,84 @@ int main()
     setlocale(LC_ALL, "RUS");
 
     try {
-        cout << "Введите данные автомобиля : марка, модель, номер кузова, гос номер, пробег" << endl;
+        cout << "Р’РІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ Р°РІС‚РѕРјРѕР±РёР»СЏ : РјР°СЂРєР°, РјРѕРґРµР»СЊ, РЅРѕРјРµСЂ РєСѓР·РѕРІР°, РіРѕСЃ РЅРѕРјРµСЂ, РїСЂРѕР±РµРі" << endl;
         string br, mo, vin, st;
         int mi;
         cin >> br >> mo >> vin >> st >> mi;
-        cout << "сколько вещей в багажнике?" << endl;
+        cout << "СЃРєРѕР»СЊРєРѕ РІРµС‰РµР№ РІ Р±Р°РіР°Р¶РЅРёРєРµ?" << endl;
         int a;
         cin >> a;
         vector<string> items;
         items.reserve(a);
         if (a != 0) {
-            cout << "Введите все вещи лежащие в багажнике" << endl;
+            cout << "Р’РІРµРґРёС‚Рµ РІСЃРµ РІРµС‰Рё Р»РµР¶Р°С‰РёРµ РІ Р±Р°РіР°Р¶РЅРёРєРµ" << endl;
         }
         for (int i = 0; i < a; i++) {
             string item;
             cin >> item;
             items.push_back(item);
         }
-        Car car(br, mo, vin, st, mi, items);
+        Car car(br, mo, vin, st, mi,items);
         car.displayInfo();
 
-
+        
         /*
-        * cout << "проверка блока try catch c ошибкой длины гос номера" << endl;
-        // 1. Проверка ошибки длины гос номера
+        * cout << "РїСЂРѕРІРµСЂРєР° Р±Р»РѕРєР° try catch c РѕС€РёР±РєРѕР№ РґР»РёРЅС‹ РіРѕСЃ РЅРѕРјРµСЂР°" << endl;
+        // 1. РџСЂРѕРІРµСЂРєР° РѕС€РёР±РєРё РґР»РёРЅС‹ РіРѕСЃ РЅРѕРјРµСЂР°
         try {
             Car car1("Test", "Model", "12345678901234567", "A12", 1000, {"asd","wasd","rea"});
         }
         catch (const length_error& e) {
-            cout << "Поймано length_error: " << e.what() << endl;
+            cout << "РџРѕР№РјР°РЅРѕ length_error: " << e.what() << endl;
         }
         catch (const invalid_argument& e) {
-            cout << "Поймано invalid_argument: " << e.what() << endl;
+            cout << "РџРѕР№РјР°РЅРѕ invalid_argument: " << e.what() << endl;
         }
         */
         int b;
-        cout << "Для продолжения введите любое число" << endl;
+        cout << "Р”Р»СЏ РїСЂРѕРґРѕР»Р¶РµРЅРёСЏ РІРІРµРґРёС‚Рµ Р»СЋР±РѕРµ С‡РёСЃР»Рѕ" << endl;
         cin >> b;
 
+        
 
-
-        // 2. Проверка ошибки длины номера кузова
+        // 2. РџСЂРѕРІРµСЂРєР° РѕС€РёР±РєРё РґР»РёРЅС‹ РЅРѕРјРµСЂР° РєСѓР·РѕРІР°
         /*
-        cout << "проверка блока try catch c ошибкой длины номера кузова" << endl;
+        cout << "РїСЂРѕРІРµСЂРєР° Р±Р»РѕРєР° try catch c РѕС€РёР±РєРѕР№ РґР»РёРЅС‹ РЅРѕРјРµСЂР° РєСѓР·РѕРІР°" << endl;
         try {
             Car car2("Test", "Model", "123", "A123BC", 1000, { "asd","wasd","rea" });
         }
         catch (const invalid_argument& e) {
-            cout << "Поймано invalid_argument: " << e.what() << endl;
+            cout << "РџРѕР№РјР°РЅРѕ invalid_argument: " << e.what() << endl;
         }
         catch (const length_error& e) {
-            cout << "Поймано length_error: " << e.what() << endl;
+            cout << "РџРѕР№РјР°РЅРѕ length_error: " << e.what() << endl;
         }
 
-        cout << "Для продолжения введите любое число" << endl;
+        cout << "Р”Р»СЏ РїСЂРѕРґРѕР»Р¶РµРЅРёСЏ РІРІРµРґРёС‚Рµ Р»СЋР±РѕРµ С‡РёСЃР»Рѕ" << endl;
         cin >> a;
 
-        cout << "проверка блока try catch c ошибкой отрицательного пробега" << endl;
+        cout << "РїСЂРѕРІРµСЂРєР° Р±Р»РѕРєР° try catch c РѕС€РёР±РєРѕР№ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕРіРѕ РїСЂРѕР±РµРіР°" << endl;
         */
-        // 3. Проверка ошибки отрицательного пробега
+        // 3. РџСЂРѕРІРµСЂРєР° РѕС€РёР±РєРё РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕРіРѕ РїСЂРѕР±РµРіР°
         try {
             car.updateMileage(1000);
         }
         catch (const invalid_argument& e) {
-            cout << "Поймано invalid_argument: " << e.what() << endl;
+            cout << "РџРѕР№РјР°РЅРѕ invalid_argument: " << e.what() << endl;
         }
     }
 
-    // Глобальный обработчик для исключений при создании первого объекта
+    // Р“Р»РѕР±Р°Р»СЊРЅС‹Р№ РѕР±СЂР°Р±РѕС‚С‡РёРє РґР»СЏ РёСЃРєР»СЋС‡РµРЅРёР№ РїСЂРё СЃРѕР·РґР°РЅРёРё РїРµСЂРІРѕРіРѕ РѕР±СЉРµРєС‚Р°
     catch (const length_error& e) {
-        cout << "Ошибка при создании автомобиля (length_error): " << e.what() << endl;
+        cout << "РћС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё Р°РІС‚РѕРјРѕР±РёР»СЏ (length_error): " << e.what() << endl;
         return 1;
     }
     catch (const invalid_argument& e) {
-        cout << "Ошибка при создании автомобиля (invalid_argument): " << e.what() << endl;
+        cout << "РћС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё Р°РІС‚РѕРјРѕР±РёР»СЏ (invalid_argument): " << e.what() << endl;
         return 1;
     }
     catch (const exception& e) {
-        cout << "Ошибка при создании автомобиля: " << e.what() << endl;
+        cout << "РћС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё Р°РІС‚РѕРјРѕР±РёР»СЏ: " << e.what() << endl;
         return 1;
     }
 
