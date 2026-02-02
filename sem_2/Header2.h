@@ -1,5 +1,5 @@
-#ifndef HEADER1_H
-#define HEADER1_H
+#ifndef HEADER2_H
+#define HEADER2_H
 
 #include <iostream>
 #include <string>
@@ -55,4 +55,5 @@ public:
 };
 
 #endif
+
 
