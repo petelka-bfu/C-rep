@@ -1,4 +1,4 @@
-#include "Header1.h"
+#include "Header2.h"
 
 using namespace std;
 
@@ -316,3 +316,4 @@ void Car::updateMileage(int prob) {
 
     mileage -= prob;
 }
+
