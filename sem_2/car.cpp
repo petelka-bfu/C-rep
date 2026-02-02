@@ -1,11 +1,11 @@
-#include "Header1.h"
+#include "Header2.h"
 
 using namespace std;
 
-Car::Car() : brand("Неизвестно"), model("Неизвестно"), VIN("00000000000000000"),
+Car::Car() : brand("ГЌГҐГЁГ§ГўГҐГ±ГІГ­Г®"), model("ГЌГҐГЁГ§ГўГҐГ±ГІГ­Г®"), VIN("00000000000000000"),
 state_number("A777AA777"), mileage(0), isOperationResult(false)
 {
-    cout << "конструктор по умолчанию" << endl;
+    cout << "ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ" << endl;
 }
 
 Car::Car(const Car& other) : brand(other.brand), model(other.model), VIN(other.VIN),
@@ -21,11 +21,11 @@ Car::Car(string br, string m, string V, string st_n, int mil, vector<string> th)
     setVIN(V);
     setStateNumber(st_n);
     SetThings(th);
-    cout << "параметризированный конструктор" << endl;
+    cout << "ГЇГ Г°Г Г¬ГҐГІГ°ГЁГ§ГЁГ°Г®ГўГ Г­Г­Г»Г© ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°" << endl;
 }
 
 Car::~Car() {
-    cout << "Деструктор" << endl;
+    cout << "Г„ГҐГ±ГІГ°ГіГЄГІГ®Г°" << endl;
 }
 
 string Car::getBrand() const { return brand; }
@@ -43,8 +43,8 @@ bool Car::isValidStateNumberChar(char c) const {
     if (c >= '0' && c <= '9') return true;
     if (c >= 'A' && c <= 'Z') return true;
     if (c >= 'a' && c <= 'z') return true;
-    if (c >= 'А' && c <= 'Я') return true;
-    if (c >= 'а' && c <= 'я') return true;
+    if (c >= 'ГЂ' && c <= 'Гџ') return true;
+    if (c >= 'Г ' && c <= 'Гї') return true;
     return false;
 }
 
@@ -60,7 +60,7 @@ string Car::RandomStateNumber() const {
     mt19937 gen(rd());
 
     
-    string letters = "АВЕКМНОРСТУХ"; 
+    string letters = "ГЂГ‚Г…ГЉГЊГЌГЋГђГ‘Г’Г“Г•"; 
     if (letters.empty()) {
         throw runtime_error("Letters string is empty");
     }
@@ -98,7 +98,7 @@ string Car::RandomStateNumber() const {
 
     return result;
 }
-//Операторы
+//ГЋГЇГҐГ°Г ГІГ®Г°Г»
 Car Car::operator+(const Car& other) const {
     Car newCar;
     newCar.markAsOperationResult();
@@ -108,17 +108,17 @@ Car Car::operator+(const Car& other) const {
 
     if (dist(gen) == 0) {
         newCar.brand = this->brand;
-        cout << "Выбрана марка первого автомобиля: " << this->brand << endl;
+        cout << "Г‚Г»ГЎГ°Г Г­Г  Г¬Г Г°ГЄГ  ГЇГҐГ°ГўГ®ГЈГ® Г ГўГІГ®Г¬Г®ГЎГЁГ«Гї: " << this->brand << endl;
     }
     else {
         newCar.brand = other.brand;
-        cout << "Выбрана марка второго автомобиля: " << other.brand << endl;
+        cout << "Г‚Г»ГЎГ°Г Г­Г  Г¬Г Г°ГЄГ  ГўГІГ®Г°Г®ГЈГ® Г ГўГІГ®Г¬Г®ГЎГЁГ«Гї: " << other.brand << endl;
     }
 
     string newStateNumber;
     do {
         newStateNumber = newCar.RandomStateNumber();
-        cout << "Сгенерирован номер: " << newStateNumber << " (длина: " << newStateNumber.length() << ")" << endl;
+        cout << "Г‘ГЈГҐГ­ГҐГ°ГЁГ°Г®ГўГ Г­ Г­Г®Г¬ГҐГ°: " << newStateNumber << " (Г¤Г«ГЁГ­Г : " << newStateNumber.length() << ")" << endl;
     } while (newStateNumber == this->state_number || newStateNumber == other.state_number);
 
 
@@ -126,7 +126,7 @@ Car Car::operator+(const Car& other) const {
     combinedThings.insert(combinedThings.end(), other.things.begin(), other.things.end());
     newCar.SetThings(combinedThings);
 
-    cout << "Создан новый автомобиль!" << endl;
+    cout << "Г‘Г®Г§Г¤Г Г­ Г­Г®ГўГ»Г© Г ГўГІГ®Г¬Г®ГЎГЁГ«Гј!" << endl;
     return newCar;
 }
 
@@ -136,7 +136,7 @@ Car& Car::operator=(const Car& other) {
         state_number = other.state_number;
         things = other.things;
         isOperationResult = other.isOperationResult; 
-        cout << "Выполнено присваивание" << endl;
+        cout << "Г‚Г»ГЇГ®Г«Г­ГҐГ­Г® ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГҐ" << endl;
     }
     return *this;
 }
@@ -147,14 +147,14 @@ Car Car::operator-(const Car& other) const {
     mt19937 gen(rd());
     uniform_int_distribution<int> dist(0, 1);
 
-    // Случайный выбор марки
+    // Г‘Г«ГіГ·Г Г©Г­Г»Г© ГўГ»ГЎГ®Г° Г¬Г Г°ГЄГЁ
     if (dist(gen) == 0) {
         newCar.brand = this->brand;
-        cout << "Выбрана марка первого автомобиля: " << this->brand << endl;
+        cout << "Г‚Г»ГЎГ°Г Г­Г  Г¬Г Г°ГЄГ  ГЇГҐГ°ГўГ®ГЈГ® Г ГўГІГ®Г¬Г®ГЎГЁГ«Гї: " << this->brand << endl;
     }
     else {
         newCar.brand = other.brand;
-        cout << "Выбрана марка второго автомобиля: " << other.brand << endl;
+        cout << "Г‚Г»ГЎГ°Г Г­Г  Г¬Г Г°ГЄГ  ГўГІГ®Г°Г®ГЈГ® Г ГўГІГ®Г¬Г®ГЎГЁГ«Гї: " << other.brand << endl;
     }
 
     string newStateNumber;
@@ -165,7 +165,7 @@ Car Car::operator-(const Car& other) const {
     vector<string> combinedThings = this->things;
     combinedThings.insert(combinedThings.end(), other.things.begin(), other.things.end());
 
-    // удаляю повторки
+    // ГіГ¤Г Г«ГїГѕ ГЇГ®ГўГІГ®Г°ГЄГЁ
     if (!combinedThings.empty()) {
         sort(combinedThings.begin(), combinedThings.end());
         auto last = unique(combinedThings.begin(), combinedThings.end());
@@ -185,11 +185,11 @@ Car Car::operator/(const Car & other) const {
 
         if (dist(gen) == 0) {
             newCar.brand = this->brand;
-            cout << "Выбрана марка первого автомобиля: " << this->brand << endl;
+            cout << "Г‚Г»ГЎГ°Г Г­Г  Г¬Г Г°ГЄГ  ГЇГҐГ°ГўГ®ГЈГ® Г ГўГІГ®Г¬Г®ГЎГЁГ«Гї: " << this->brand << endl;
         }
         else {
             newCar.brand = other.brand;
-            cout << "Выбрана марка второго автомобиля: " << other.brand << endl;
+            cout << "Г‚Г»ГЎГ°Г Г­Г  Г¬Г Г°ГЄГ  ГўГІГ®Г°Г®ГЈГ® Г ГўГІГ®Г¬Г®ГЎГЁГ«Гї: " << other.brand << endl;
         }
 
         string newStateNumber;
@@ -217,22 +217,22 @@ Car Car::operator/(const Car & other) const {
 
         newCar.SetThings(commonThings);
 
-        cout << "Создан новый автомобиль (оператор /)!" << endl;
+        cout << "Г‘Г®Г§Г¤Г Г­ Г­Г®ГўГ»Г© Г ГўГІГ®Г¬Г®ГЎГЁГ«Гј (Г®ГЇГҐГ°Г ГІГ®Г° /)!" << endl;
         return newCar;
     }
-//Конец операторов
+//ГЉГ®Г­ГҐГ¶ Г®ГЇГҐГ°Г ГІГ®Г°Г®Гў
 void Car::SetThings(const vector<string>& thing) {
     things = thing;
 }
 
 void Car::setVIN(const string& newVIN) {
     if (newVIN.length() != 17) {
-        throw length_error("Длина должна быть ровно 17 символов");
+        throw length_error("Г„Г«ГЁГ­Г  Г¤Г®Г«Г¦Г­Г  ГЎГ»ГІГј Г°Г®ГўГ­Г® 17 Г±ГЁГ¬ГўГ®Г«Г®Гў");
     }
 
     for (char c : newVIN) {
         if (!isValidVINChar(c)) {
-            throw invalid_argument("Найден недопустимый символ");
+            throw invalid_argument("ГЌГ Г©Г¤ГҐГ­ Г­ГҐГ¤Г®ГЇГіГ±ГІГЁГ¬Г»Г© Г±ГЁГ¬ГўГ®Г«");
         }
     }
 
@@ -241,11 +241,11 @@ void Car::setVIN(const string& newVIN) {
 
 void Car::setStateNumber(const string& newNumber) {
     if (newNumber.empty()) {
-        throw invalid_argument("Государственный номер не может быть пустым");
+        throw invalid_argument("ГѓГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Г© Г­Г®Г¬ГҐГ° Г­ГҐ Г¬Г®Г¦ГҐГІ ГЎГ»ГІГј ГЇГіГ±ГІГ»Г¬");
     }
 
     if (newNumber.length() < 6 || newNumber.length() > 9) {
-        throw length_error("Государственный номер должен содержать от 6 до 9 символов");
+        throw length_error("ГѓГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Г© Г­Г®Г¬ГҐГ° Г¤Г®Г«Г¦ГҐГ­ Г±Г®Г¤ГҐГ°Г¦Г ГІГј Г®ГІ 6 Г¤Г® 9 Г±ГЁГ¬ГўГ®Г«Г®Гў");
     }
 
     bool hasLetter = false;
@@ -261,27 +261,27 @@ void Car::setStateNumber(const string& newNumber) {
     }
 
     if (!hasLetter || !hasDigit) {
-        throw invalid_argument("Государственный номер должен содержать хотя бы одну букву и одну цифру");
+        throw invalid_argument("ГѓГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»Г© Г­Г®Г¬ГҐГ° Г¤Г®Г«Г¦ГҐГ­ Г±Г®Г¤ГҐГ°Г¦Г ГІГј ГµГ®ГІГї ГЎГ» Г®Г¤Г­Гі ГЎГіГЄГўГі ГЁ Г®Г¤Г­Гі Г¶ГЁГґГ°Гі");
     }
 
     state_number = newNumber;
 }
 
 void Car::displayInfo() const {
-    cout << "Информация об автомобиле" << endl;
-    cout << "Марка: " << brand << endl;
+    cout << "Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї Г®ГЎ Г ГўГІГ®Г¬Г®ГЎГЁГ«ГҐ" << endl;
+    cout << "ГЊГ Г°ГЄГ : " << brand << endl;
 
     if (!isOperationResult) {
-        cout << "Модель: " << model << endl;
-        cout << "Номер кузова: " << VIN << endl;
-        cout << "Пробег: " << mileage << " км" << endl;
+        cout << "ГЊГ®Г¤ГҐГ«Гј: " << model << endl;
+        cout << "ГЌГ®Г¬ГҐГ° ГЄГіГ§Г®ГўГ : " << VIN << endl;
+        cout << "ГЏГ°Г®ГЎГҐГЈ: " << mileage << " ГЄГ¬" << endl;
     }
 
-    cout << "Гос. номер: " << state_number << endl;
-    cout << "Список вещей в багажнике:" << endl;
+    cout << "ГѓГ®Г±. Г­Г®Г¬ГҐГ°: " << state_number << endl;
+    cout << "Г‘ГЇГЁГ±Г®ГЄ ГўГҐГ№ГҐГ© Гў ГЎГ ГЈГ Г¦Г­ГЁГЄГҐ:" << endl;
 
     if (things.empty()) {
-        cout << "  Багажник пуст" << endl;
+        cout << "  ГЃГ ГЈГ Г¦Г­ГЁГЄ ГЇГіГ±ГІ" << endl;
     }
     else {
         for (size_t i = 0; i < things.size(); ++i) {
@@ -294,15 +294,16 @@ void Car::displayInfo() const {
 void Car::updateMileage(int prob) {
     if (prob > 0) {
         if (mileage - prob < 0) {
-            throw invalid_argument("Пробег должен быть неотрицательным");
+            throw invalid_argument("ГЏГ°Г®ГЎГҐГЈ Г¤Г®Г«Г¦ГҐГ­ ГЎГ»ГІГј Г­ГҐГ®ГІГ°ГЁГ¶Г ГІГҐГ«ГјГ­Г»Г¬");
         }
     }
     if (prob < 0)
     {
-        throw invalid_argument("Скрутка на отрицательный пробег невозможна");
+        throw invalid_argument("Г‘ГЄГ°ГіГІГЄГ  Г­Г  Г®ГІГ°ГЁГ¶Г ГІГҐГ«ГјГ­Г»Г© ГЇГ°Г®ГЎГҐГЈ Г­ГҐГўГ®Г§Г¬Г®Г¦Г­Г ");
     }
 
     mileage -= prob;
+
 
 
 }
