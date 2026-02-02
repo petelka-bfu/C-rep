@@ -1,6 +1,4 @@
-#ifndef HEADER2_H
-#define HEADER2_H
-
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -12,16 +10,11 @@ class Car
 {
 private:
     std::string brand;
+    std::string model;      
+    std::string VIN;        
     std::string state_number;
+    int mileage;           
     std::vector<std::string> things;
-    bool isOperationResult;
-protected:
-    std::string model;
-    std::string VIN;
-    int mileage;
-    bool isValidVINChar(char c) const;
-    bool isValidStateNumberChar(char c) const;
-    bool isLetter(char c) const;
 
 public:
     Car();
@@ -44,16 +37,15 @@ public:
     void displayInfo() const;
     void updateMileage(int prob);
     std::string RandomStateNumber() const;
-
+    bool isValidVINChar(char c) const;
+    bool isValidStateNumberChar(char c) const;
+    bool isLetter(char c) const;
 
     Car operator+(const Car& other) const;
     Car& operator=(const Car& other);
     Car operator-(const Car& other) const;
     Car operator/(const Car& other) const;
-    void markAsOperationResult() { isOperationResult = true; }
     std::vector<std::string> getThings() const;
 };
-
-#endif
 
 
