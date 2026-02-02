@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include <vector>
-#include "../laba2/Header1.h"
+#include "Header2.h"
 
 using namespace std;
 
@@ -93,4 +93,5 @@ int main()
     }
 
     return 0;
+
 }
