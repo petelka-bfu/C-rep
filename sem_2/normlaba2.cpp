@@ -1,6 +1,6 @@
-﻿#include <iostream>
+#include <iostream>
 #include <vector>
-#include "Header2.h"
+#include "Header1.h"
 
 using namespace std;
 
@@ -9,15 +9,18 @@ int main()
     setlocale(LC_ALL, "RUS");
 
     try {
-        cout << "Введите данные автомобиля : марка, модель, номер кузова, гос номер, пробег" << endl;
-        string br, mo, vin, st;
-        int mi;
-        cin >> br >> mo >> vin >> st >> mi;
+        cout << "Введите данные автомобиля: марка, модель, номер кузова, гос номер, пробег, сервис, "
+            << "марка магнитолы, количество топлива в литрах, РАСХОД ТОПЛИВА (л/100км), ОБЪЕМ БЕНЗОБАКА" << endl;
+        string br, mo, vin, st, ster, serv;
+        int mi, fuel, fuel_cap, fuel_ta;
+        cin >> br >> mo >> vin >> st >> mi >> serv >> ster >> fuel >> fuel_cap >> fuel_ta;
+
         cout << "сколько вещей в багажнике?" << endl;
         int a;
         cin >> a;
         vector<string> items;
         items.reserve(a);
+
         if (a != 0) {
             cout << "Введите все вещи лежащие в багажнике" << endl;
         }
@@ -26,50 +29,21 @@ int main()
             cin >> item;
             items.push_back(item);
         }
-        Car car(br, mo, vin, st, mi, items);
+
+        Car car(br, mo, vin, st, serv, ster, mi, fuel, fuel_cap, fuel_ta, items);
         car.displayInfo();
 
-        Car car1("BMW","M5","01234567891234567", "Б777ББ77", 12000, {"be","me","bsd"});
-        /*
-        * cout << "проверка блока try catch c ошибкой длины гос номера" << endl;
-        // 1. Проверка ошибки длины гос номера
-        try {
-            Car car1("Test", "Model", "12345678901234567", "A12", 1000, {"asd","wasd","rea"});
-        }
-        catch (const length_error& e) {
-            cout << "Поймано length_error: " << e.what() << endl;
-        }
-        catch (const invalid_argument& e) {
-            cout << "Поймано invalid_argument: " << e.what() << endl;
-        }
-        */
+        Car car1("BMW", "M5", "01234567891234567", "B777BB77", "Auto", "Basix",
+            12000, 50, 4, 60, { "be", "me", "bsd" });
+
         int b;
         cout << "Для продолжения введите любое число" << endl;
         cin >> b;
 
-
-        //оператор +
+        // оператор +
         Car car2 = car + car1;
         car2.displayInfo();
-        // 2. Проверка ошибки длины номера кузова
-        /*
-        cout << "проверка блока try catch c ошибкой длины номера кузова" << endl;
-        try {
-            Car car2("Test", "Model", "123", "A123BC", 1000, { "asd","wasd","rea" });
-        }
-        catch (const invalid_argument& e) {
-            cout << "Поймано invalid_argument: " << e.what() << endl;
-        }
-        catch (const length_error& e) {
-            cout << "Поймано length_error: " << e.what() << endl;
-        }
 
-        cout << "Для продолжения введите любое число" << endl;
-        cin >> a;
-
-        cout << "проверка блока try catch c ошибкой отрицательного пробега" << endl;
-        */
-        // 3. Проверка ошибки отрицательного пробега
         try {
             car.updateMileage(1000);
         }
@@ -77,8 +51,6 @@ int main()
             cout << "Поймано invalid_argument: " << e.what() << endl;
         }
     }
-
-    // Глобальный обработчик для исключений при создании первого объекта
     catch (const length_error& e) {
         cout << "Ошибка при создании автомобиля (length_error): " << e.what() << endl;
         return 1;
@@ -93,5 +65,4 @@ int main()
     }
 
     return 0;
-
 }
