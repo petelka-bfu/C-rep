@@ -1,0 +1,7 @@
+C:/Users/admin/Desktop/CarPro/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/admin/Desktop/CarPro/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/admin/Desktop/CarPro/out/build/x64-Debug/Carr/CMakeFiles/edit_cache.dir
+C:/Users/admin/Desktop/CarPro/out/build/x64-Debug/Carr/CMakeFiles/rebuild_cache.dir
+C:/Users/admin/Desktop/CarPro/out/build/x64-Debug/main/CMakeFiles/main.dir
+C:/Users/admin/Desktop/CarPro/out/build/x64-Debug/main/CMakeFiles/edit_cache.dir
+C:/Users/admin/Desktop/CarPro/out/build/x64-Debug/main/CMakeFiles/rebuild_cache.dir
