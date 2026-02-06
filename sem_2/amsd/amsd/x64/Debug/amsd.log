@@ -1,0 +1,10 @@
+﻿  amsd.cpp
+  autoworkshop.cpp
+  car.cpp
+C:\Users\admin\Desktop\amsd\car.cpp(310,64): warning C4267: аргумент: преобразование из "size_t" в "_Ty"; возможна потеря данных
+C:\Users\admin\Desktop\amsd\car.cpp(310,64): warning C4267:         with
+C:\Users\admin\Desktop\amsd\car.cpp(310,64): warning C4267:         [
+C:\Users\admin\Desktop\amsd\car.cpp(310,64): warning C4267:             _Ty=int
+C:\Users\admin\Desktop\amsd\car.cpp(310,64): warning C4267:         ]
+  Создание кода...
+  amsd.vcxproj -> C:\Users\admin\Desktop\amsd\x64\Debug\amsd.exe
