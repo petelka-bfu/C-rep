@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <locale>
@@ -292,9 +292,9 @@ bool areWStringsEqual(const wchar_t* str1, const wchar_t* str2) {
 }
 
 void task2() {
-    const int MAX_WORDS = 500;        
-    const int MAX_WORD_LEN = 128;      
-    const int MAX_TEXT_LEN = 10000;    
+    const int MAX_WORDS = 500;
+    const int MAX_WORD_LEN = 128;
+    const int MAX_TEXT_LEN = 10000;
 
     setlocale(LC_ALL, "ru_RU.UTF-8");
     wcout.imbue(locale("ru_RU.UTF-8"));
