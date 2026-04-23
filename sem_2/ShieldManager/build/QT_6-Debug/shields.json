@@ -1,0 +1,62 @@
+[
+    {
+        "defense_coeff": 0.85,
+        "defense_type": "Физическая",
+        "description": "Надёжный стальной щит",
+        "name": "Щит Героя"
+    },
+    {
+        "defense_coeff": 1.2,
+        "defense_type": "Магическая",
+        "description": "Защищает от заклинаний",
+        "name": "Магический барьер"
+    },
+    {
+        "defense_coeff": 0.95,
+        "defense_type": "Ледяная",
+        "description": "Морозная защита",
+        "name": "Ледяная стена"
+    },
+    {
+        "defense_coeff": 1.1,
+        "defense_type": "Огненная",
+        "description": "Пылающая защита",
+        "name": "Огненный щит"
+    },
+    {
+        "defense_coeff": 0.75,
+        "defense_type": "Магическая",
+        "description": "Усилен магией веков",
+        "name": "Древний щит"
+    },
+    {
+        "defense_coeff": 0.85,
+        "defense_type": "Физическая",
+        "description": "Надёжный стальной щит",
+        "name": "Щит Героя"
+    },
+    {
+        "defense_coeff": 1.2,
+        "defense_type": "Магическая",
+        "description": "Защищает от заклинаний",
+        "name": "Магический барьер"
+    },
+    {
+        "defense_coeff": 0.95,
+        "defense_type": "Ледяная",
+        "description": "Морозная защита",
+        "name": "Ледяная стена"
+    },
+    {
+        "defense_coeff": 1.1,
+        "defense_type": "Огненная",
+        "description": "Пылающая защита",
+        "name": "Огненный щит"
+    },
+    {
+        "defense_coeff": 0.75,
+        "defense_type": "Магическая",
+        "description": "Усилен магией веков",
+        "name": "Древний щит"
+    }
+]

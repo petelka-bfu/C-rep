@@ -1,0 +1,110 @@
+[
+    {
+        "defense_coeff": 0.5,
+        "defense_type": "Физическая",
+        "description": "",
+        "name": "Битый щит 1"
+    },
+    {
+        "defense_coeff": 0,
+        "defense_type": "Магическая",
+        "description": "Нет коэффициента",
+        "name": "Битый щит 2"
+    },
+    {
+        "defense_coeff": -0.3,
+        "defense_type": "Огненная",
+        "description": "Отрицательный коэффициент",
+        "name": "Битый щит 3"
+    },
+    {
+        "defense_coeff": 0.8,
+        "defense_type": "Электрическая",
+        "description": "Неверный тип защиты",
+        "name": "Битый щит 4"
+    },
+    {
+        "defense_coeff": 0.9,
+        "defense_type": "Ледяная",
+        "description": "Пустое название",
+        "name": ""
+    },
+    {
+        "defense_coeff": 0,
+        "defense_type": "Физическая",
+        "description": "Текст вместо числа",
+        "name": "Битый щит 6"
+    },
+    {
+        "defense_coeff": 0.7,
+        "defense_type": "",
+        "description": "Недостаточно полей",
+        "name": "Битый щит 7"
+    },
+    {
+        "defense_coeff": 0,
+        "defense_type": "",
+        "description": "Несколько битых полей",
+        "name": ""
+    },
+    {
+        "defense_coeff": 0,
+        "defense_type": "Магическая",
+        "description": "Коэффициент ноль",
+        "name": "Битый щит 9"
+    },
+    {
+        "defense_coeff": 0.5,
+        "defense_type": "Физическая",
+        "description": "",
+        "name": "Битый щит 1"
+    },
+    {
+        "defense_coeff": 0,
+        "defense_type": "Магическая",
+        "description": "Нет коэффициента",
+        "name": "Битый щит 2"
+    },
+    {
+        "defense_coeff": -0.3,
+        "defense_type": "Огненная",
+        "description": "Отрицательный коэффициент",
+        "name": "Битый щит 3"
+    },
+    {
+        "defense_coeff": 0.8,
+        "defense_type": "Электрическая",
+        "description": "Неверный тип защиты",
+        "name": "Битый щит 4"
+    },
+    {
+        "defense_coeff": 0.9,
+        "defense_type": "Ледяная",
+        "description": "Пустое название",
+        "name": ""
+    },
+    {
+        "defense_coeff": 0,
+        "defense_type": "Физическая",
+        "description": "Текст вместо числа",
+        "name": "Битый щит 6"
+    },
+    {
+        "defense_coeff": 0.7,
+        "defense_type": "",
+        "description": "Недостаточно полей",
+        "name": "Битый щит 7"
+    },
+    {
+        "defense_coeff": 0,
+        "defense_type": "",
+        "description": "Несколько битых полей",
+        "name": ""
+    },
+    {
+        "defense_coeff": 0,
+        "defense_type": "Магическая",
+        "description": "Коэффициент ноль",
+        "name": "Битый щит 9"
+    }
+]
